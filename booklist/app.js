@@ -53,12 +53,22 @@ UI.prototype.showAlert = function (message, className) {
 
 
     //time out after 3 seconds
-    setTimeout(function() {
+    setTimeout(function () {
         document.querySelector('.alert').remove();
     }, 2500);
 }
 
-//add event listener
+
+//Delete book prototype for UI
+UI.prototype.deleteBook = function (target) {
+    if (target.className === 'delete') {
+        //delete the whole row tr
+        target.parentElement.parentElement.remove();
+    }
+}
+
+
+//add event listener for submit
 document.getElementById('book-form').addEventListener('submit', getBookDetails);
 
 
@@ -94,3 +104,16 @@ function getBookDetails(e) {
     e.preventDefault();
 
 }
+
+
+//add event listener for delete
+document.getElementById('book-list').addEventListener('click', function (e) {
+    //instantiate UI object
+    const myUI = new UI();
+
+    myUI.deleteBook(e.target);
+
+    //Show alert message after delete
+    myUI.showAlert('Book removed!', 'success');
+    e.preventDefault()
+});
