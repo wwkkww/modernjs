@@ -35,7 +35,7 @@
 //----------------------------------------------------------
 
 const users = ['Nathan', 'John', 'Brandon'];
-
+ 
 //ver 1
 // const nameLengths = users.map(function(name) {
 //   return name.length;

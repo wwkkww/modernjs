@@ -29,7 +29,7 @@ const data = {
   body: 'This is a custom post body'
 };
 
-// //Create post
+//Create post
 // http.post('https://jsonplaceholder.typicode.com/posts', data, function (err, post) {
 //   if (err) {
 //     console.log(err);
